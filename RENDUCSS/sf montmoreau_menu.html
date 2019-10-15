@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+</title>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Changa|Exo|Lexend+Peta|Lexend+Tera|Lexend+Zetta|Orbitron|Roboto|Russo+One|Saira&display=swap" rel="stylesheet">
+    </head>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+
+      box-sizing: border-box;
+
+  }
+      body{
+          display: flex;
+          justify-content: center;
+          min-height: 100vh;
+          background-image: url('https://www.hebergeur-image.com/upload/92.136.11.112-5d7675263da94.jpg');
+          background-position: center;
+          background-size: cover;
+      }
+
+      .ET{
+          position :absolute;
+          width: 100%;
+          height:100%;
+          left:-20%;
+          top:30%;
+          background-image: url('https://www.hebergeur-image.com/upload/92.136.11.112-5d7675263defe.png');
+          background-repeat: no-repeat;
+          animation: slide 15s linear infinite;
+      }
+      @keyframes slide {
+          0% {transform:translate3d(-30%,30%,0); }
+
+          60% {transform:translate3d(40%,-35%,0); }
+          70% {transform:translate3d(50%,-40%,0); }
+          80% {transform:translate3d(60%,-45%,0); }
+          100% {transform:translate3d(85%,-65%,0); }
+      }
+      .block{
+          position: absolute;
+          display: flex;
+          left:0px;
+          flex-wrap:wrap;
+          transition: 0.5s;
+          width: 100%;
+          height:100vh;
+          padding-right: 50%;
+          padding-left: 5%;
+
+      }
+      .block:hover  .box{
+          filter: blur(5px);
+          transform: scale(.9);
+
+      }
+      .block .box:hover{
+          filter: blur(0px);
+          transform: scale(.9);
+
+      }
+      .block .box:before{
+          content:'';
+          position: absolute;
+          width: 100%;
+          height:100%;
+          background-color: rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          transition: 0.5s;
+
+
+      }
+      .block .box:hover:before{
+          background: white;
+          transform: scale(1.25);
+
+      }
+      .block .box{
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          width: 40%;
+          height: 40%;
+          transition:0.5s;
+          background-color: rgba(0, 0, 0, 0.2);
+      }
+      .box{
+          margin: 5%;
+      }
+
+      .block .box .inside{
+          text-align: center;
+          z-index: 2;
+          padding:0 10px;
+          transition:0.5s;
+
+      }
+      .block .box .inside h1{
+          font-family: 'Lexend zetta', sans-serif;
+          margin: 30px;
+      }
+      .block .box .inside a{
+          display: inline-block;
+          margin-top: 25px;
+          color: #555;
+    font-family: 'Lexend zetta', sans-serif;
+    transition:2s;
+
+      }
+
+
+.block .box .inside a:hover {
+      color: #FFF;
+      background: rgba(90,90,90,0.4);
+      box-shadow: 0 0 30px 10px rgba(200,200,200,0.8), 0 0 40px 10px rgba(90,90,90,0.8), 0 0 40px 10px rgba(130,130,130,0.8);
+      transition-delay: 1s;
+      border-radius : 5%;
+
+}
+
+    .block .box .inside a span {
+      position: absolute;
+      display: block;
+    }
+
+    .block .box:hover .inside {
+        color: grey;
+    }
+    .prez{
+        position: absolute;
+        right: 5%;
+        top:50%;
+        padding:20px;
+        transform: translateY(-50%);
+        justify-content: center;
+          color: white;
+        display: flex;
+        flex-wrap:wrap;
+        width: 20%;
+        height: 80%;
+        transition:0.5s;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+        margin:50px;
+        text-align: center;
+        font-family: 'Lexend zetta', sans-serif;
+    }
+    .prez:hover{
+        box-shadow:  0 0 30px 10px rgba(200,200,200,0.8), 0 0 40px 10px rgba(90,90,90,0.8), 0 0 80px 10px rgba(130,130,130,0.8);
+    }
+    </style>
+<body>
+<div class="ET"></div>
+        <div class="block">
+            <div class="box 1">
+                <div class="inside">
+                    <h1>Pré-commandes</h1>
+                    <p>Profitez-en les places sont limitées !</p>
+                    <a href='SF_precommande.php'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>Foncez</a>
+                </div>
+            </div>
+            <div class="box 2">
+                <div class="inside">
+                    <H1>Programme 2020</H1>
+                    <p>Découvrez la programmation de cette première édition en détail</p>
+                    <a href='SF_prog.html'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>En savoir +</a>
+                </div>
+            </div>
+            <div class="box 3">
+                <div class="inside">
+                    <H1>Presse</H1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, voluptatibus.</p>
+                    <a href='SF_presse'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>On en parle déjà</a>
+                </div>
+            </div>
+            <div class="box 4">
+                <div class="inside">
+                    <H1>Portfolio</H1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, voluptatibus.</p>
+                    <a href='SF_portfolio'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>Whaou!</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="prez"><h2>MONTMOREAU change de dimension</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias nihil veniam necessitatibus modi voluptatum ipsa nobis. Repudiandae, libero veniam quidem blanditiis ea suscipit. Atque aut beatae repellendus dolorum doloremque fugiat expedita, facere possimus error vero omnis, ex maiores esse harum sint ipsa laborum praesentium. Tempore amet, natus asperiores in officiis?<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae earum reiciendis placeat corrupti quaerat quam quos unde ut, consequuntur impedit asperiores eos totam quas doloribus. Sed aspernatur pariatur, quos itaque repellendus architecto enim cupiditate. Doloremque. <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias eveniet possimus, voluptatibus placeat eaque saepe nesciunt? Necessitatibus, quo. Esse, molestiae expedita, saepe eligendi nostrum reiciendis ratione quo. Minima eveniet enim vero rem fugiat sit quidem impedit omnis eum aliquid dolor voluptatem illo nemo, delectus accusamus nisi officia. Nulla molestias, laborum voluptates. Quaerat quia, blanditiis a delectus sit earum sapiente eveniet nihil error non temporibus illum! </p></div>
+
+    </body>
+</html>

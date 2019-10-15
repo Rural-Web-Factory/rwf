@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PERSPECTIVE IMAGE</title>
+		<META CHARSET="utf-8">
+			<style>
+
+			  /* Parallax base styles
+			  --------------------------------------------- */
+
+			  .parallax {
+			    height: 500px; /* fallback for older browsers */
+			    height: 200vh;
+			    overflow-x: hidden;
+			    overflow-y: auto;
+			    -webkit-perspective: 300px;
+			    perspective: 200px;
+					margin: 0;
+					padding:0;
+			  }
+
+			  .parallax__group {
+			    position: relative;
+			    height: 1000px; /* fallback for older browsers */
+			    height: 200vh;
+
+			    -webkit-transform-style: preserve-3d;
+			    transform-style: preserve-3d;
+			  }
+
+			  .parallax__layer {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    right: 0;
+			    bottom: 0;
+
+			  }
+
+			  .parallax__layer--fore {
+			    -webkit-transform: translateZ(-50px) scale(.7);
+			    transform: translateZ(-50px) scale(2);
+			    z-index: 1;
+			  }
+
+			  .parallax__layer--base {
+			    -webkit-transform: translateZ(-100px) ;
+			    transform: translateZ(-100px) scale(2) ;
+			    z-index: 4;
+			  }
+				.parallax__layer--back {
+			    -webkit-transform: translateZ(-200px);
+			    transform: translateZ(-200px) scale(2);
+			    z-index: 3;
+			  }
+				.parallax__layer--hand {
+			    -webkit-transform: translateZ(-200px);
+			    transform: translateZ(-200px) ;
+			    z-index: 2;
+			  }
+				.parallax__layer--pierre2 {
+			    -webkit-transform: translateZ(-100px);
+			    transform: translateZ(-100px) ;
+			    z-index: 3;
+			  }
+				.parallax__layer--pierre3 {
+			    -webkit-transform: translateZ(100px);
+			    transform: translateZ(100px) scale(.5);
+					z-index: 4;
+			  }
+				.parallax__layer--pierre4 {
+			    -webkit-transform: translateZ(150px);
+			    transform: translateZ(150px) scale(1.7);
+					z-index: 5;
+			  }
+			  .parallax__layer--deep {
+			    -webkit-transform: translateZ(-400px) scale(2);
+			    transform: translateZ(-300px) scale(2);
+			    z-index: 2;
+			  }
+				.parallax__layer--accueil {
+			    -webkit-transform: translateZ(-250px) ;
+			    transform: translateZ(-250px) scale(2);
+					top:-1500px;
+					font-size: 100px;
+			    z-index: 4;
+			  }
+				.parallax__layer--titre1 {
+			    -webkit-transform: translateZ(0);
+			    transform: translateZ(0) scale(0.75);
+			    z-index: 3;
+				}
+				.parallax__layer--block1 {
+			    -webkit-transform: translateZ(0);
+			    transform: translateZ(0);
+			    z-index: 3;
+				}
+				.parallax__layer--kang {
+			    -webkit-transform: translateZ(-400px);
+			    transform: translateZ(-400px) scale(3);
+			    z-index: 3;
+			  }
+				.parallax__layer--titre2 {
+					-webkit-transform: translateZ(-200px);
+			    transform: translateZ(-200px) scale(1.5);
+			    z-index: 3;
+			  }
+				.parallax__layer--block2 {
+			    -webkit-transform: translateZ(-400px);
+			    transform: translateZ(-400px) scale(0.8);
+			    z-index: 3;
+				}
+				.parallax__layer--fleche {
+			    -webkit-transform: translateZ(-100px);
+			    transform: translateZ(-150px) scale(0.7);
+			    z-index: 3;
+				}
+				.parallax__layer--frog {
+			    -webkit-transform: translateZ(-200px);
+			    transform: translateZ(-200px) scale(2.5);
+			    z-index: 3;
+			  }
+				.parallax__layer--titre3 {
+					-webkit-transform: translateZ(-50px);
+			    transform: translateZ(-50px) scale(1);
+			    z-index: 3;
+			  }
+				.parallax__layer--lamp {
+			    -webkit-transform: translateZ(-300px);
+			    transform: translateZ(-300px) scale(2.5);
+			    z-index: 3;
+			  }
+
+
+
+
+
+			  /* Debugger styles - used to show the effect
+			  --------------------------------------------- */
+
+
+			  .parallax__group {
+			    -webkit-transition: -webkit-transform 0.5s;
+			    transition: transform 0.5s;
+			  }
+
+
+			  /* demo styles
+			  --------------------------------------------- */
+
+			  body, html {
+			    overflow: hidden;
+			  }
+
+			  body {
+			    font: 100% / 1.5 Arial;
+			    margin:0;
+			    padding:0;
+			  }
+
+			  .parallax {
+			    font-size: 200%;
+					background-image:url("https://www.hebergeur-image.com/upload/109.214.52.86-5d431aa07ed2b.jpg");
+					background-size: cover;
+
+			  }
+
+			   /* centre the content in the parallax layers */
+			  #title {
+			    text-align: center;
+			    position: absolute;
+			    left: 50%;
+			    top: 50%;
+			    -webkit-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+					width:100%;
+					font-size: 120px;
+
+			  }
+				.titre1 {
+			    position: absolute;
+			    left: 60%;
+			    top: 50%;
+			    -webkit-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+					width:100%;
+					font-size: 120px;
+					color:#000;
+					text-shadow:0 0 25px #B0BEFC;
+				}
+				.hand{
+
+			    position: absolute;
+			    right: -50%;
+			    top: 55%;
+			    -webkit-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+					width:100%;
+					height:600px;
+
+
+				}
+				#pierre2 {
+
+			    position: absolute;
+			    left: 800px;
+			    top: 350px;
+			    -webkit-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+					width:3000px;
+					height:1600px;
+					background-position: top;
+				}
+				#pierre3 {
+			    position:absolute;
+			    left: 1000px;
+			    top: 1200px;
+			    -webkit-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+					width:3000px;
+					height:1600px;
+					background-position: top;
+
+
+				}
+				#pierre4 {
+			    position:absolute;
+			    left: 2000px;
+			    top: 1700px;
+			    -webkit-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+					width:3000px;
+					height:1600px;
+					background-position: top;
+				}
+				#block1 {
+					position:absolute;
+					width:400px;
+					height:700px;
+					background-color: rgba(0, 0, 0, 0.4);
+					left: 1200px;
+			    top: 900px;
+					border-radius: 5px;
+					border-style: double;
+					padding-left: 25px;
+					box-shadow:0 0 2em #B0BEFC;
+					color:#B0BEA3;
+
+				}
+				#kang {
+					position:absolute;
+					top:600px;
+					left:0px;
+				}
+				#block2 {
+					position:absolute;
+					width:710px;
+					height:710px;
+					background-image:url();
+					left: 1200px;
+			    top: 400px;
+
+				}
+				#titre2 {
+			    position: absolute;
+			    left: 85%;
+			    top: 40%;
+			    -webkit-transform: translate(-50%, -50%);
+			    transform: translate(-50%, -50%);
+					width:100%;
+					font-size: 100px;
+					color:#000;
+					text-shadow:0 0 25px #B0BEFC;
+
+			 }
+			 #fleche {
+				 	position:absolute;
+ 					width:710px;
+ 					height:700px;
+					left: -1100px;
+ 			    top: -800px;
+
+			}
+			#frog {
+				position:absolute;
+			 width:710px;
+			 height:1400px;
+			 left: 750px;
+			 top:1200px;
+
+			}
+			#titre3 {
+				position: absolute;
+				left:1300px;
+				top: 1900px;
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				width:100%;
+				font-size: 100px;
+				color:#000;
+				text-shadow:0 0 25px #B0BEFC;
+		 }
+		 #lamp {
+			 position:absolute;
+			width:1400px;
+			height:1400px;
+			left: -100px;
+			top:1200px;
+
+		 }
+
+
+
+
+			  /* style the groups
+			  --------------------------------------------- */
+
+			  #group1 {
+			    z-index: 5; /* slide over group 2 */
+
+			  }
+			  #group1 .parallax__layer--base {
+
+			  }
+
+			  #group2 {
+			   z-index: 3;  /* slide under groups 1 and 3 */
+			  }
+			  #group2 .parallax__layer--back {
+
+			  }
+
+			  #group3 {
+			    z-index: 4; /* slide over group 2 and 4 */
+			  }
+			  #group3 .parallax__layer--base {
+
+			  }
+
+			  #group4 {
+			    z-index: 2; /* slide under group 3 and 5 */
+			  }
+			  #group4 .parallax__layer--deep {
+
+			  }
+
+			  #group5 {
+			    z-index: 3; /* slide over group 4 and 6 */
+			  }
+			  #group5 .parallax__layer--base {
+
+			  }
+
+			  #group6 {
+			    z-index: 2; /* slide under group 5 and 7 */
+			  }
+			  #group6 .parallax__layer--back {
+
+			  }
+
+			  #group7 {
+			    z-index: 3; /* slide over group 7 */
+			  }
+			  #group7 .parallax__layer--base {
+
+			  }
+
+			</style>
+			</head>
+
+			<body>
+
+
+
+			  <div class="parallax">
+			    <div id="group1" class="parallax__group">
+			      <div class="parallax__layer parallax__layer--accueil">
+			        <div ID="title"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d466f7753d8b.png"></img></div>
+			      </div>
+			    </div>
+			    <div id="group2" class="parallax__group">
+
+			      <div class="parallax__layer parallax__layer--hand">
+			        <div class="hand"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d40d6387eb78.png">
+							</div>
+						</div>
+						<div class="parallax__layer parallax__layer--pierre2">
+	            <div id="pierre2"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d40d0d140ca7.png">
+							</div>
+			    </div>
+					<div class="parallax__layer parallax__layer--titre1">
+						<div class="titre1">INFOGRAPHIE</div>
+					</div>
+					<div class="parallax__layer parallax__layer--pierre3">
+						<div id="pierre3"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d40d2cb96356.png">
+						</div>
+				</div>
+				<div class="parallax__layer parallax__layer--pierre4">
+					<div id="pierre4"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d40aaecafc53.png">
+					</div>
+			</div>
+			<div class="parallax__layer parallax__layer--block1">
+				<div id="block1"><ul><b>Lorem ipsum dolor sit</b><li> amet, consectetur</li><li> adipisicing elit, sed do eiusmod </li><li>tempor incididunt ut labore</li> <li>et dolore magna aliqua.</li> <li>Ut enim ad minim</li><li> veniam, quis nostrud</li><li> exercitation ullamco</li></ul>
+				</div>
+		</div>
+
+
+
+
+
+				</div>
+			    <div id="group3" class="parallax__group">
+						<div class="parallax__layer parallax__layer--kang">
+			        <div id="kang"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d447c533f59f.png"></img></div>
+			      </div>
+			      <div class="parallax__layer parallax__layer--titre2">
+			        <div id="titre2">COMMUNICATION</div>
+			      </div>
+						<div class="parallax__layer parallax__layer--fleche">
+			        <div id="fleche"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d46933aa9bed.png"></img></div>
+			      </div>
+						<div class="parallax__layer parallax__layer--block2">
+							<input type="image"  id="block2" src="https://www.hebergeur-image.com/upload/109.214.52.86-5d460c8a6f228.png"></div>
+			     </div>
+
+
+
+			    <div id="group4" class="parallax__group">
+
+			      <div class="parallax__layer parallax__layer--frog">
+			        <div id="frog"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d4633ed0ed8b.png"></img></div>
+			      </div>
+						<div class="parallax__layer parallax__layer--titre3">
+			        <div id="titre3">WEB DESIGN</div>
+			      </div>
+			      <div class="parallax__layer parallax__layer--lamp">
+			        <div id="lamp"><img src="https://www.hebergeur-image.com/upload/109.214.52.86-5d46465a368cc.png"</div>
+			      </div>
+			    </div>
+			    <div id="group5" class="parallax__group">
+			      <div class="parallax__layer parallax__layer--fore">
+			        <div class="title"></div>
+			      </div>
+			      <div class="parallax__layer parallax__layer--base">
+			        <div class="title"></div>
+			      </div>
+			    </div>
+
+			  </div>
+
+			</body>
+			</html>

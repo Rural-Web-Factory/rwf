@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PERSPECTIVE IMAGE</title>
+	<META CHARSET="utf-8">
+	<link href="The Wild Breath of Zelda.otf" rel="stylesheet">
+	</link>
+
+	<style>
+		.parallax__group {
+			-webkit-transition: -webkit-transform 0.5s;
+			transition: transform 0.5s;
+		}
+
+
+		body,
+		html {
+			overflow: hidden;
+		}
+
+		body {
+			font: 100% / 1.5 Arial;
+			margin: 0;
+			padding: 0;
+		}
+
+		.parallax {
+			position: absolute;
+			background-image: url("https://www.hebergeur-image.com/upload/86.199.0.154-5d4efcf4def91.png");
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+			width: 100%;
+			height: 200vh;
+			top: -200px;
+
+		}
+
+
+		.parallax {
+			height: 500px;
+			/* fallback for older browsers */
+			height: 450vh;
+			overflow-x: hidden;
+			overflow-y: auto;
+			-webkit-perspective: 300px;
+			perspective: 100px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.parallax__group {
+			position: relative;
+			height: 300vh;
+			/* fallback for older browsers */
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+		}
+
+		.parallax__layer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+		}
+
+		#titre {
+
+			font-size: 150%;
+			font-style: italic;
+			letter-spacing: 4px;
+			text-decoration: underline;
+			font-family: "The Wild Breath of Zelda";
+
+
+		}
+
+		#intro {
+
+			width: 800px;
+			height: 100%;
+
+
+		}
+
+		.formu {
+			position: absolute;
+			width: 400px;
+			height: 200px;
+			font-size: 14px;
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.2);
+			border: solid black 2px;
+			box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.2);
+			top: 1750px;
+			left: 400px;
+
+		}
+
+		.formu:hover {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		.parallax__layer--accueil {
+			-webkit-transform: translateZ(-100px);
+			transform: translateZ(-100px) scale(1.5);
+			top: -100px;
+			left: -550px;
+			font-size: 100px;
+
+		}
+
+		.parallax__layer--titre {
+			-webkit-transform: translateZ(-50px);
+			transform: translateZ(-50px) scale(1.5);
+			top: 1170px;
+			left: 80px;
+			width: 2000px;
+			font-size: 100px;
+
+		}
+
+		.parallax__layer--intro {
+			-webkit-transform: translateZ(-40px);
+			transform: translateZ(-40px) scale(2);
+
+			font-size: 100px;
+
+		}
+	</style>
+</head>
+<?php
+$serveur = 'localhost';
+$login = 'root';
+$password = '';
+
+try{
+	$connexion = new PDO("mysql:host=$serveur;dbname=test2", $login, $password);
+	$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	$requete = $connexion ->prepare( /* préparation de la requete SQL */
+		"INSERT INTO visiteurs(nom, prenom, email)
+		VALUES(:nom, :prenom, :email)" /* création de marqueurs (nom précédé de deux points) */
+	);
+
+	$requete-> bindParam(':nom', $nom); /* la méthode "bindParam" sert a lier les marqueurs à des variables */
+	$requete-> bindParam(':prenom', $prenom);
+	$requete-> bindParam(':email', $email);
+
+	$nom = 'Astier';
+	$prenom = 'alexandre';
+	$email = 'alex.astier@gmail.com';
+	$requete->execute(); /* execution de la requete*/
+}
+
+
+catch (PDOException $e){
+	echo 'echec : ' .$e->getmessage();
+}
+ ?>
+
+<body>
+
+
+
+	<div class="parallax">
+		<div id="group1" class="parallax__group">
+			<div class="parallax__layer parallax__layer--titre">
+				<div id="titre">LA PAGE DE NOA</div>
+			</div>
+		</div>
+		<div class="parallax__layer parallax__layer--accueil">
+			<div id="title"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d4eeeb793323.png"></img></div>
+		</div>
+		<div class="parallax__layer parallax__layer--intro">
+
+			<div class="formu">
+				<form method="POST" action="formulaires_secure.php">
+					<p>
+						<label for="prenom">Entrez votre prenom :</label>
+						<input type="text" name="prenom" id="prenom" />
+					</p>
+					<p>
+						<label for="nom">Entrez votre nom :</label>
+						<input type="text" name="nom" id="nom" />
+					</p>
+					<p>
+						<label for="email">Entrez votre email:</label>
+						<input type="text" name="email" id="email" />
+					</p>
+					<p>
+						<label for="pseudo">Entrez votre pseudo:</label>
+						<input type="text" name="pseudo" id="pseudo" />
+					</p>
+					<p>
+						<input type="submit" value="envoyer" />
+
+					</p>
+			</div>
+			</formu>
+		</div>
+</body>
+
+</html>

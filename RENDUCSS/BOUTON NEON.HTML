@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+      <title>BOUTON NEON</title>
+  </head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      margin:0;
+      padding:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh; /*centre verticalement*/
+      background: #142432;
+    }
+    a {
+      position:relative;
+      display:inline-block;
+      color: #2196f3;
+      padding:15px 30px;
+      text-transform:uppercase;
+      letter-spacing: 8px;
+      text-decoration:none;
+      font-size:24px;
+      overflow:hidden;
+      transition:2s;
+    }
+    a:hover {
+      color:#255784;
+      background:#2196F3;
+      box-shadow: 0 0 10px #2196F3, 0 0 40px #2196F3, 0 0 80px #00FDD1;
+      transition-delay:1s;
+    }
+    a span {
+      position: absolute;
+      display: block;
+    }
+    a span:nth-child(1) {
+      top:0;
+      left:-100%;
+      width:100%;
+      height:3px;
+      background: linear-gradient(90deg, transparent,#7799ff);
+    }
+    a:hover span:nth-child(1) {
+      left:100%;
+      transition:2s;
+    }
+    a span:nth-child(3) {
+      bottom:0;
+      right:-100%;
+      width:100%;
+      height:3px;
+      background: linear-gradient(270deg, transparent,#7799ff);
+    }
+    a:hover span:nth-child(3) {
+      right:100%;
+      transition:2s;
+      transition-delay:1s;
+    }
+  </style>
+  <body>
+      <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          click me
+      </a>
+  </body>
+</html>
