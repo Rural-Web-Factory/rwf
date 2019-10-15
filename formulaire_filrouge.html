@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		formulaires
+	</title>
+	<META CHARSET="utf-8">
+
+</head>
+<style>
+body {
+	background-image: url("pier-407252_1920.jpg") ;
+	background-size: cover;
+}
+	#formulaire {
+		margin-top: 5px;
+		padding: 10px;
+		margin-left: 10em;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
+	#formulaire label {
+		float: left;
+		width: 110px;
+		font-size: 13px;
+		text-decoration: underline;
+	}
+
+	form {
+		position: absolute;
+		color: #AA2222;
+		text-decoration: underline;
+		border: 2px solid black;
+		border-radius: 12px;
+		box-shadow: 2px 2px 10px #2222BB;
+		width: 600px;
+		padding: 10px;
+		left: 40%;
+		top: 40%;
+		transform: translate(-50%, -50%);
+
+	}
+	#valider {
+		position: absolute;
+		-webkit-box-shadow: 2px 2px 10px #2222FF;
+		box-shadow: 2px 2px 10px #2222FF;
+		left:50%;
+		transform: translate(-50%);
+		bottom: 10%;
+		border-radius: 5px;
+
+	}
+	#valider:hover {
+		background: rgba(50, 50, 250, 0.2);
+		
+
+	}
+	input {
+		background: rgba(100, 100, 100, 0.2);
+		text-align: center;
+		border-radius: 7px;
+
+	}
+</style>
+
+<body>
+
+	<form action="" method="post" id="formulaire">
+		<fieldset>
+			<legend align="center"> informations </legend>
+			<p>
+				<label for="nom"> Auteur : </label>
+				<input type="text" id="nom" name="nom" placeholder="Auteur du post">
+			</p>
+			<p>
+				<label for="depot"> Date de dépot : </label>
+				<input type="date" id="depot" name="depot" placeholder="jj/mm/aa">
+			</p>
+			<p>
+				<label for="date"> Date du document : </label>
+				<input type="date" id="date" name="date" placeholder="jj/mm/aa">
+			</p>
+			<p>
+				<label for="titre"> Titre : </label>
+				<input type="text" id="titre" name="titre" placeholder="Titre du document" required="required" pattern="[A-F]" />
+			</p>
+			<p>
+				<select>
+					<option value="">type</option>
+
+
+					<optgroup label="photo">photo
+
+						<option value="legende">legende</option>
+						<option value="localisation">localisation</option>
+						<option value="credit">credit</option>
+					</optgroup>
+					<optgroup label="document">document
+						<option value="référence du document">reférence</option>
+						<option value="Texte juridique">texte juridique</option>
+						<option value="Rapport">rapport</option>
+						<option value="Etude">etude</option>
+						<option value="Déliberation">délibération</option>
+						<option value="Cahier des charges">cahier des charges</option>
+						<option value="Article">article</option>
+						<option value="Compte rendu">compte rendu</option>
+						<option value="Courrier">courrier</option>
+						<option value="Note">note</option>
+						<option value="Note interne">note interne</option>
+						<option value="Document audiovisuel">document audiovisuel</option>
+						<option value="Autre">autre</option>
+					</optgroup>
+				</select>
+			</p>
+
+<input type="submit" value="valider" id="valider">
+
+		</fieldset>
+	</form>
+</body>
+
+</html>

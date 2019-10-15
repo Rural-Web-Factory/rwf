@@ -1,0 +1,794 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>PROPRE page2</title>
+</head>
+<meta charset="utf-8">
+<style>
+  body,
+  html {
+    overflow: hidden;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://www.hebergeur-image.com/upload/86.199.0.154-5d5099fab9a03.png");
+    height: 300vh;
+  }
+
+  .parallax {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    height: 200vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 200px;
+    -webkit-perspective: 200px;
+    background-size: cover;
+  }
+
+
+
+  .parallax__group {
+    position: relative;
+    height: 1400vh;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+  }
+
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .hand {
+    position: absolute;
+    right: -1200px;
+    top: -300px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 600px;
+
+  }
+
+
+  .pierre2 {
+    position: absolute;
+    top: -200px;
+    left: -100px;
+
+  }
+
+  .pierre1 {
+    position: absolute;
+    top: 1100px;
+    left: 500px;
+
+  }
+
+  .pierre3 {
+    position: absolute;
+    top: -900px;
+    left: -200px;
+
+  }
+
+  .pierre4 {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+
+  }
+
+
+  .parallax__layer--hand {
+    transform: translateZ(-450px) scale(1.5);
+    -webkit-transform: translateZ(-450px) scale(1.5);
+  }
+
+  .parallax__layer--block {
+    transform: translateZ(0px) scale(2);
+    -webkit-transform: translateZ(0px) scale(1);
+  }
+
+  .parallax__layer--pierre1 {
+    transform: translateZ(50px) scale(1.2);
+    -webkit-transform: translateZ(50px) scale(1.2);
+  }
+
+  .parallax__layer--pierre2 {
+    transform: translateZ(-100px) scale(0.5);
+    -webkit-transform: translateZ(-100px) scale(0.5);
+  }
+
+  .parallax__layer--pierre4 {
+    transform: translateZ(100px) scale(1);
+    -webkit-transform: translateZ(100px) scale(1);
+  }
+
+  .parallax__layer--pierre3 {
+    transform: translateZ(0px) scale(.5);
+    -webkit-transform: translateZ(0px) scale(.5);
+  }
+
+  .parallax__layer--slider {
+    transform: translateZ(0px) scale(0.75);
+    -webkit-transform: translateZ(0px) scale(0.75);
+  }
+
+  .parallax__layer--block2 {
+    transform: translateZ(0px) scale(2);
+    -webkit-transform: translateZ(0px) scale(1);
+  }
+
+  .parallax__layer--media {
+    transform: translateZ(0px) scale(2);
+    -webkit-transform: translateZ(0px) scale(1);
+  }
+
+  .parallax__layer--contact {
+    transform: translateZ(90px) scale(0.5);
+    -webkit-transform: translateZ(90px) scale(0.5);
+  }
+
+  .parallax__layer--etoile {
+    transform: translateZ(-50px) scale(2);
+    -webkit-transform: translateZ(-50px) scale(2);
+  }
+
+  .parallax__layer--etoile1 {
+    transform: translateZ(75px) scale(1);
+    -webkit-transform: translateZ(75px) scale(1);
+  }
+
+  .parallax__layer--etoile2 {
+    transform: translateZ(50px) scale(1.5);
+    -webkit-transform: translateZ(50px) scale(1.5);
+  }
+
+  .parallax__layer--etoile3 {
+    transform: translateZ(0px) scale(2);
+    -webkit-transform: translateZ(0px) scale(1);
+  }
+
+
+  #block1 {
+    position: absolute;
+    margin: 35px;
+    padding: 10px;
+    font-family: 'Lexend Tera';
+    width: 300px;
+    height: 350px;
+    font-size: 18px;
+    text-align: left;
+    left: 50px;
+    top: 950px;
+    box-shadow: 0px 0px 20px 2px white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  #block1:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px 2px #2196f3;
+  }
+
+  h2 {
+    position: relative;
+    text-decoration: underline;
+    font-family: 'Lexend Tera';
+  }
+
+  h1 {
+    text-decoration: underline;
+    font-family: 'Lexend Tera';
+    text-align: center;
+    color: #DDD;
+    font-size: 46px;
+  }
+
+  .contact-form {
+    max-width: 710px;
+    margin: auto;
+    padding: 10px;
+    overflow: hidden;
+
+  }
+
+  .contact-form-text {
+    display: block;
+    width: 600px;
+    background: #666;
+    margin: 16px;
+    padding: 10px 40px;
+  }
+
+  .contact-form-text:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px 2px #2196f3;
+  }
+
+  .contact-form-text:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px 2px #2196f3;
+    color: #DDD;
+  }
+
+  .contact-form-btn {
+    position: absolute;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 50px;
+    left: 48%;
+  }
+
+  textarea.contact-form-text {
+    resize: none;
+    height: 150px;
+  }
+
+  .contact-form-btn:hover {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 20px;
+    color: #255784;
+    background: #2196F3;
+    box-shadow: 0 0 10px #2196F3, 0 0 40px #2196F3, 0 0 80px #00FDD1;
+    transition-delay: 1s;
+  }
+
+  #block2 {
+    position: absolute;
+    margin-top: 85px;
+    margin-left: 35px;
+    padding: 0px;
+    width: 500px;
+    height: 210px;
+    font-size: 14px;
+    text-align: left;
+    left: 50px;
+    top: 1300px;
+    box-shadow: 0px 0px 20px 2px white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  #block2:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px 2px #2196f3;
+  }
+
+  #block3 {
+    position: absolute;
+    margin: 35px;
+    padding: 30px;
+    width: 270px;
+    height: 200px;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: center;
+    right: 50px;
+    top: 950px;
+    box-shadow: 0px 0px 20px 2px white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  #block3:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px 2px #2196f3;
+  }
+
+  input {
+    width: 270px;
+    font-family: 'Lexend Tera';
+    font-size: 20px;
+    background-color: #666666;
+    border: 1px solid #2196f3;
+
+  }
+
+  input::placeholder {
+    color: black;
+  }
+
+  #search {
+    position: relative;
+    bottom: -50px;
+  }
+
+  #block4 {
+    position: absolute;
+    margin: 35px;
+    padding: 15px;
+    width: 300px;
+    height: 350px;
+    font-size: 14px;
+    text-align: left;
+    right: 50px;
+    top: 1250px;
+    box-shadow: 0px 0px 20px 2px white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  #block4:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px 2px #2196f3;
+  }
+
+
+
+  a {
+    color: #2196f3;
+    padding: 15px 15px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    overflow: hidden;
+    transition: 2s;
+    display: table-cell;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  a:hover {
+    color: #255784;
+    background: #2196F3;
+    box-shadow: 0 0 10px #2196F3, 0 0 40px #2196F3, 0 0 80px #00FDD1;
+    transition-delay: 0.5s;
+  }
+
+  a span {
+    position: absolute;
+    display: block;
+  }
+
+  a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #7799ff);
+  }
+
+  a:hover span:nth-child(1) {
+    left: 100%;
+    transition: 2s;
+  }
+
+  a span:nth-child(3) {
+    top: 100px;
+    right: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(270deg, transparent, #7799ff);
+  }
+
+  a:hover span:nth-child(3) {
+    right: 100%;
+    transition: 2s;
+    transition-delay: 1s;
+  }
+
+  .menu {
+    width: 100%;
+    height: 100px;
+    display: table;
+  }
+
+  .retour {
+    position: relative;
+    width: auto;
+    top: 80px;
+    left: 44%;
+  }
+
+  .media {
+    position: absolute;
+    margin: 35px;
+    padding: 25px;
+    width: 40%;
+    height: 550px;
+    font-size: 22px;
+    font-family: 'Lexend Tera';
+    color: rgba(0, 0, 0, 0.1);
+    text-align: left;
+    right: 150px;
+    top: 250px;
+    box-shadow: 0px 0px 20px 2px white;
+    background-image: url("https://www.hebergeur-image.com/upload/86.199.0.154-5d532c0d708d2.jpg");
+    background-size: cover;
+    border-radius: 4px;
+  }
+
+  .media:hover {
+    background-image: url("https://www.hebergeur-image.com/upload/86.199.0.154-5d5336bff2df6.jpg");
+    box-shadow: 0px 0px 20px 2px #2196f3;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .retour2 {
+    position: relative;
+    width: auto;
+    top: 180px;
+    left: 44%;
+  }
+
+
+
+  .parallax__layer--slider {
+    width: 1000px;
+    height: 748px;
+    left: 460px;
+    top: -9750px;
+    overflow: hidden;
+    border: 2px solid black;
+    box-shadow: 0px 0px 20px 2px #2196f3;
+  }
+
+  .parallax__layer--block2 {
+    margin: 150px auto;
+    top: -10000px;
+  }
+
+  .parallax__layer--media {
+    position: relative;
+    width: 100%;
+    height: 748px;
+    left: 0px;
+    top: -21500px;
+  }
+
+  .parallax__layer--contact {
+    position: relative;
+    width: 100%;
+    height: 748px;
+    left: 0px;
+    top: -35600px;
+
+  }
+
+  .parallax__layer--etoile {
+    position: relative;
+    width: 100%;
+    height: 748px;
+    left: 10%;
+    top: -33200px;
+
+  }
+
+  .parallax__layer--etoile1 {
+    position: relative;
+    width: 100%;
+    height: 748px;
+
+    top: -33400px;
+
+  }
+
+  .parallax__layer--etoile2 {
+    position: relative;
+    width: 100%;
+    height: 748px;
+    left: 10%;
+    top: -34400px;
+
+  }
+
+  .parallax__layer--etoile3 {
+    position: relative;
+    width: 100%;
+    height: 748px;
+    left: 10%;
+    top: -35200px;
+
+  }
+
+  #slides {
+    width: 5152px;
+    animation: glisse 15s infinite;
+
+  }
+
+  .slide {
+    float: left;
+  }
+
+  @keyframes glisse {
+    0% {
+      transform: translateX(0);
+    }
+
+    18% {
+      transform: translateX(-1000px);
+    }
+
+    36% {
+      transform: translateX(-2000px);
+    }
+
+    54% {
+      transform: translateX(-3000px);
+    }
+
+    72% {
+      transform: translateX(-4000px);
+    }
+
+    80% {
+      transform: translateY(-750px) translateX(0);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  #block2_1 {
+    position: absolute;
+    width: 450px;
+    height: 545px;
+    top: 190px;
+    left: 50px;
+    border: 2px solid black;
+    box-shadow: 0px 0px 20px 2px #2196f3;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Lexend Tera';
+    text-align: left;
+  }
+
+  #block2_1:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px 2px #2196f3;
+  }
+
+  #block2_2 {
+    position: absolute;
+    width: 450px;
+    height: 565px;
+    top: 190px;
+    right: 50px;
+    border: 2px solid black;
+    box-shadow: 0px 0px 20px 2px #2196f3;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  #block2_2:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px 2px #2196f3;
+  }
+
+  .etoile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 190px;
+    left: 350px;
+  }
+
+  .etoile1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 190px;
+    left: 350px;
+  }
+
+  .etoile2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 190px;
+    left: 350px;
+  }
+
+  .etoile3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 190px;
+    left: 350px;
+  }
+</style>
+
+<body>
+  <div class="menu">
+    <a href="PROPRE.HTML">
+      <span></span>
+      <span></span>
+      <span></span>
+      accueil
+    </a>
+    <a href="#slider">
+      <span></span>
+      <span></span>
+      <span></span>
+      portfolio
+    </a>
+    <a href="#media">
+      <span></span>
+      <span></span>
+      <span></span>
+      media
+    </a>
+    <a href="#contact">
+      <span></span>
+      <span></span>
+      <span></span>
+      contact
+    </a>
+  </div>
+  <div class="parallax">
+
+    <div class="parallax_group">
+      <div class="parallax__layer parallax__layer--hand">
+        <div class="hand"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d5142a42ed45.png">
+        </div>
+      </div>
+
+      <div class="parallax__layer parallax__layer--pierre2">
+        <div class="pierre2"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d5149e059c0f.png">
+        </div>
+      </div>
+      <div class="parallax__layer parallax__layer--pierre1">
+        <div class="pierre1"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d5149e05926e.png">
+        </div>
+      </div>
+      <div class="parallax__layer parallax__layer--pierre3">
+        <div class="pierre3"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d52cface7db9.png">
+        </div>
+      </div>
+      <div class="parallax__layer parallax__layer--pierre4">
+        <div class="pierre4"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d52cface70f9.png">
+        </div>
+      </div>
+    </div>
+    <div class="parallax__group">
+      <div class="parallax__layer parallax__layer--block">
+        <div id="block1">
+          <ul>
+            <h2><b>BUTS A ATTEINDRE :</b></h2>
+            <li>Lorem ipsum dolor</li>
+            <li>sit amet, consectetur adipisicing</li>
+            <li>Tempora asperiores ab omnis</li>
+            <li>non dolorem, quibusdam illo natus</li>
+            <li> fugit ipsam repellat veniam</li>
+            <li>ducimus perferendis eaque</li>
+            <li>soluta dolore accusantium</li>
+            <li>laborum iusto doloremque libero</li>
+            <li> et! Voluptate, cumque, aut</li>
+            <li>voluptas et, sed eaque illum tempora</li>
+          </ul>
+        </div>
+        <div id="block2">
+          <iframe width="100%" height=100%" src="https://www.youtube.com/embed/videoseries?list=PLmMgxLLaMcmfCDepOmx2Byios-V6ivOkt" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen"></iframe>
+        </div>
+        <div id="block3">
+          <form><input type="text" width="100%" name="username" placeholder="username" />
+          </form>
+          <form><input type="text" required password="PASSWORD" placeholder="password" />
+          </form><input type="submit" value="SUBMIT" />
+          <div id="search">
+            <input type="search" /><button>search</button>
+          </div>
+        </div>
+        <div id="block4">
+        </div>
+      </div>
+    </div>
+    <div class="parallax__group">
+      <div class="parallax__layer parallax__layer--slider">
+        <div id="slider">
+          <div id="slides">
+            <div class="slide"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d51d8e848777.jpg" alt="" /></div>
+            <div class="slide"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d51d8e848b80.jpg" alt="" /></div>
+            <div class="slide"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d51d8e848f3a.jpg" alt="" /></div>
+            <div class="slide"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d51f24698b7d.jpg" alt="" /></div>
+            <div class="slide"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d51f24698e6e.jpg" alt="" /></div>
+            <div class="slide"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d52b7557aaac.jpg" alt="" /></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="parallax__layer parallax__layer--block2">
+        <div id="block2_1">
+          <h2>CONTEXTE :</h2><br>Images réalisées sur le logiciel <b>Zbrush</b> de façon autodidacte avec pour modèle le personnage de <em>Hellboy</em>. <br><br>Un travail détaillé sur l'oeil, en particulier l'iris et la transparence du cristallin.
+          Le but étant de pousser le réalisme avant l'intégration dans un visage. <br><br>Première sculture sur <b>Zbrush</b>, <em>Priscilla</em>, un boss emblématique du jeu <b><em>Dark souls</em></b>. <br /><br /> Sur la dernière image, une
+          réplique d'une sentinelle du jeu <b><em>Portal</em></b>,réalisée sous <b>3DSmax</b> avant animation et intégrée dans un HDR.
+        </div>
+        <div id="block2_2"></div>
+        <div class="retour">
+          <a href="PROPRE page2_1.HTML">
+            <span></span>
+            <span></span>
+            <span></span>
+            retour
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax__group">
+      <div class="parallax__layer parallax__layer--media">
+
+        <div class="media">
+          <h2><b>Lorem ipsum dolor sit amet</b></h2> consectetur adipisicing elit. Doloremque fuga ut, voluptate iusto asperiores ducimus ratione nulla eum cupiditate porro consequuntur iste accusantium, accusamus, vero fugit molestias est ullam
+          facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, blanditiis, sequi? Esse, hic fuga temporibus cum officiis delectus eaque dicta. Accusantium temporibus corporis sequi totam quod iure, quidem nobis rem eveniet
+          illum et eligendi, dicta omnis iste modi dolores iusto illo, similique, earum cumque. Dolorem voluptatibus iure iusto nobis ducimus. <br>
+          <h2><b>Illum in laudantium.</b></h2> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus porro, illum in laudantium veritatis maiores, blanditiis architecto voluptates repellat, dolor nemo unde! Unde numquam natus explicabo.
+          Minus deserunt impedit debitis dolorem molestiae odit quae temporibus aliquid provident, libero odio doloremque sunt possimus reprehenderit dignissimos tempore earum repellendus repudiandae voluptas.
+        </div>
+        <div class="retour2">
+          <a href="PROPRE page2_1.HTML">
+            <span></span>
+            <span></span>
+            <span></span>
+            retour
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax__group">
+      <div class="parallax__layer parallax__layer--etoile">
+        <div id="media"></div>
+        <div class="etoile"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d53fe244b61b.png" alt="0">
+        </div>
+      </div>
+      <div class="parallax__layer parallax__layer--etoile1">
+        <div class="etoile1"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d540c25bf9b7.png" alt=""></div>
+
+      </div>
+
+      <div class="parallax__layer parallax__layer--etoile2">
+        <div class="etoile2"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d540c25bf73e.png" alt=""></div>
+      </div>
+      <div class="parallax__layer parallax__layer--etoile3">
+        <div class="etoile3"><img src="https://www.hebergeur-image.com/upload/86.199.0.154-5d540272b1643.png" alt=""></div>
+      </div>
+      <div class="parallax__layer parallax__layer--contact">
+
+        <div class="contact-section">
+          <h1>Contact Us</h1>
+          <form class="contact-form" action="PROPRE page2_1.HTML" method="post">
+            <input type="text" class="contact-form-text" placeholder="Your name">
+            <input type="email" class="contact-form-text" placeholder="Your email">
+            <input type="text" class="contact-form-text" placeholder="Your phone">
+            <textarea class="contact-form-text" placeholder="Your message"></textarea>
+            <input type="submit" class="contact-form-btn" value="send">
+          </form>
+        </div>
+        <div class="retour2">
+          <a href="PROPRE page2_1.HTML">
+            <span></span>
+            <span></span>
+            <span></span>
+            retour
+          </a>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+  </div>
+</body>
+
+</html>
